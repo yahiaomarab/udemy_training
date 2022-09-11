@@ -1,12 +1,13 @@
-import 'package:appoo/modules/social_app/social_login_app/social_login_app.dart';
 import 'package:appoo/shared/component/component.dart';
+import 'package:appoo/shared/network/local/cache-helper.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../shared/styles/colors.dart';
-import '../../shared/network/local/cacah_helper.dart';
+import '../social-app/social_login_app/social_login_app.dart';
+
 class onboardingscreen extends StatefulWidget
 {
   @override
@@ -94,7 +95,7 @@ bool islast=false;
                   children: [
                    SmoothPageIndicator(
                      controller: boardController,
-                       effect:const ExpandingDotsEffect(
+                       effect: ExpandingDotsEffect(
                          dotWidth: 10,
                          dotHeight: 10,
                          spacing: 5,

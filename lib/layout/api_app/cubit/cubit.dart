@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../modules/apiapp/business.dart';
 import '../../../modules/apiapp/science.dart';
 import '../../../modules/apiapp/sports.dart';
-import '../../../shared/network/remote/dio_helper.dart';
+import '../../../shared/network/remote/dio-helper.dart';
 
 class newappcubit extends Cubit<newappstates>{
   newappcubit():super(intialstate());
@@ -131,7 +131,7 @@ class newappcubit extends Cubit<newappstates>{
     emit(newindexstate());
   }
   List<dynamic>search=[];
-  void getsearchsdata(String? value)
+  void getsearchsdata(String value)
   {
     emit(businessloadingstate());
     search=[];

@@ -1,7 +1,7 @@
 class homemodel
 {
- late final  bool status;
-  late final Homedatamodel data;
+ bool? status;
+ Homedatamodel? data;
 
    homemodel.FromJson(Map<String,dynamic>Json)
    {
@@ -27,8 +27,8 @@ Homedatamodel.FromJson(Map<String,dynamic>Json)
 }
 class bannermodel
 {
- late final int id;
- late final String image;
+  int? id;
+  String? image;
 
   bannermodel.FromJson(Map<String,dynamic>Json)
   {
@@ -39,14 +39,14 @@ class bannermodel
 }
 class productsmodel
 {
-   late final int id;
-  late final dynamic price;
-late final dynamic oldprice;
- late final int discount;
- late final String name;
- late final String image;
-late final bool infavorites;
-late final bool incart;
+      int?   id;
+  dynamic?   price;
+  dynamic?   oldprice;
+      int?   discount;
+   String?   name;
+   String?   image;
+     bool?   infavorites;
+     bool?   incart;
 
   productsmodel.FromJson(Map<String,dynamic>Json)
   {

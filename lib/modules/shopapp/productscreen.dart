@@ -18,9 +18,9 @@ class productscreen extends StatelessWidget
         appBar: AppBar(),
         body: ListView.separated(
           physics: BouncingScrollPhysics(),
-          itemBuilder: (context,index)=>buildfavitem(shopcubit.get(context).favormodel!.data.data[index],context),
+          itemBuilder: (context,index)=>buildfavitem(shopcubit.get(context).favormodel!.data!.data![index],context),
           separatorBuilder:(context,index)=>dividorline(),
-          itemCount: shopcubit.get(context).favormodel!.data.data.length,
+          itemCount: shopcubit.get(context).favormodel!.data!.data!.length,
         ),
       ),
     );
@@ -40,13 +40,13 @@ Widget buildfavitem(favoritesdata model,context)
             children: [
               Image(
                 image: AssetImage(
-                  '${model.product.image}',
+                  '${model.product!.image}',
                 ),
                 height: 120,
                 width: 120,
                 fit: BoxFit.cover,
               ),
-              if(model.product.discount !=0)
+              if(model.product!.discount !=0)
                 Container(
                   color: Colors.red,
                   child: Padding(
@@ -71,7 +71,7 @@ Widget buildfavitem(favoritesdata model,context)
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '${model.product.name} ',
+                  '${model.product!.name} ',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -82,7 +82,7 @@ Widget buildfavitem(favoritesdata model,context)
                 Row(
                   children: [
                     Text(
-                      '${model.product.price.toString()}',
+                      '${model.product!.price.toString()}',
                       style: TextStyle(
                         fontSize: 15,
                         color: dafultcolor,
@@ -91,9 +91,9 @@ Widget buildfavitem(favoritesdata model,context)
                     SizedBox(
                       width: 5,
                     ),
-                    if(model.product.discount!=0)
+                    if(model.product!.discount!=0)
                       Text(
-                        '${model.product.oldprice.toString()}',
+                        '${model.product!.oldprice.toString()}',
                         style: TextStyle(
                           fontSize: 12,
                           color: Colors.grey,
@@ -103,11 +103,11 @@ Widget buildfavitem(favoritesdata model,context)
                     Spacer(),
                     IconButton(
                       icon: CircleAvatar(
-                          backgroundColor:shopcubit.get(context).favorites[model.product.id]! ?  dafultcolor:Colors.grey,
+                          backgroundColor:shopcubit.get(context).favorites[model.product!.id]! ?  dafultcolor:Colors.grey,
                           radius: 15,
                           child: Icon(Icons.favorite_border,size: 15,color: Colors.white,)),
                       onPressed: () {
-                        shopcubit.get(context).changefavorites(model.product.id);
+                        shopcubit.get(context).changefavorites(model.product!.id!);
 
                       },
                     ),

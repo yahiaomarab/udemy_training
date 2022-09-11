@@ -1,10 +1,15 @@
+import 'dart:core';
+
+
+
+
 class Shoploginuser
 {
- String? message;
- late bool status;
+ String?  message;
+  bool ? status;
   UserData? data;
 Shoploginuser({
-   required this.data,
+  required this.data,
   required this.message,
   required this.status,
 });
@@ -17,16 +22,16 @@ Shoploginuser({
 }
 class UserData
 {
-  late final int id;
-  late final  String name;
- late final   String email;
- late final   String phone;
-  late final   String image;
-  late final   int points;
-  late final   int credits;
-  late final String token;
+      int?     id;
+   String? name;
+   String? email;
+   String? phone;
+   String? image;
+      int? points;
+      int? credits;
+   String? token;
   UserData({
-   required this.id,
+    required this.id,
     required this.name,
     required this.email,
     required this.phone,

@@ -1,5 +1,5 @@
 import 'package:appoo/modules/register/cubit/cubit.dart';
-import 'package:appoo/shared/network/local/cacah_helper.dart';
+import 'package:appoo/shared/network/local/cache-helper.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -114,7 +114,7 @@ class register extends StatelessWidget
                            prefix: Icons.password,
                            type: TextInputType.visiblePassword,
                            text: 'Password',
-                           ispassword: registappcubit.get(context).bolyian,
+                           isPassword: registappcubit.get(context).bolyian,
                            validate: (String? value){
                              if(value!.isEmpty)
                              {
@@ -125,8 +125,8 @@ class register extends StatelessWidget
                                return null;
                              }
                            },
-                           suefix:registappcubit.get(context).suffix,
-                           suffixpressed: ()
+                           suffix:registappcubit.get(context).suffix,
+                           onSuffixPressed: ()
                            {
                              registappcubit.get(context).changeiconpass();
                            }

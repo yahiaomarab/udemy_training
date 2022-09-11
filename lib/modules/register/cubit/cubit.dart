@@ -1,14 +1,12 @@
 import 'package:appoo/models/userlogin.dart';
 import 'package:appoo/modules/register/cubit/states.dart';
-import 'package:appoo/shared/constants/endpoints.dart';
-import 'package:appoo/shared/network/remote/dio_helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class registappcubit extends Cubit<registappstates>
 {
-  late  Shoploginuser modellogin;
+    Shoploginuser? modellogin;
   registappcubit():super(intialregisterstate());
   static registappcubit get(context)=>BlocProvider.of(context);
 //  void userregister(

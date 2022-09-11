@@ -1,12 +1,13 @@
+
 class FavoriteModel
  {
- late final  bool status;
-  late final String message;
- late final  Data data;
+    bool? status;
+   String? message;
+    Data? data;
    FavoriteModel({
-    required this.status,
+      required this.status,
       required this.message,
-     required this.data,
+      required this.data,
    });
    FavoriteModel.fromjson(Map<String,dynamic>json)
    {
@@ -17,31 +18,31 @@ class FavoriteModel
 }
  class Data
  {
-  late final int currentpage;
-  late final List<favoritesdata>data;
-  late final int from;
- late final  String nextpageurl;
- late final  String firstpageurl;
- late final  String lastpageurl;
-  late final int lastpage;
-  late final String path;
-  late final int perpage;
-  late final int to;
- late final  int total;
- late final  String prevpageurl;
+  int? currentpage;
+  List<favoritesdata>?data;
+  int? from;
+  String? nextpageurl;
+  String? firstpageurl;
+  String? lastpageurl;
+  int? lastpage;
+  String? path;
+  int? perpage;
+  int? to;
+  int? total;
+  String? prevpageurl;
   Data({
-     required this.currentpage,
-    required this.data,
-    required this.firstpageurl,
-     required this.from,
-     required this.lastpage,
-    required this.lastpageurl,
-    required this.nextpageurl,
-     required this.path,
-    required this.perpage,
+   required this.currentpage,
+   required this.data,
+   required this.firstpageurl,
+   required this.from,
+   required this.lastpage,
+   required this.lastpageurl,
+   required this.nextpageurl,
+   required this.path,
+   required this.perpage,
    required  this.prevpageurl,
-     required this.to,
-    required this.total,
+   required this.to,
+   required this.total,
    });
   Data.fromjson(Map<String, dynamic> json){
      currentpage = json['current_page'];
@@ -60,8 +61,8 @@ class FavoriteModel
  }
  class favoritesdata
  {
- late final int id;
- late  final Product product;
+ int? id;
+  Product? product;
  favoritesdata({
    required this.id,
    required this.product,
@@ -74,15 +75,15 @@ class FavoriteModel
  }
  class Product
  {
-  late final int id;
-  late final dynamic price;
- late final dynamic  oldprice;
-  late final int  discount;
-  late final String name;
-  late final  String image;
- late final  String description;
+      int?  id;
+  dynamic?  price;
+  dynamic?   oldprice;
+      int?   discount;
+   String?  name;
+   String?  image;
+   String?  description;
  Product({
-    required this.id,
+   required this.id,
    required this.price,
    required this.oldprice,
    required this.discount,

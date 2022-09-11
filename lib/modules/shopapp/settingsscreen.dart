@@ -20,9 +20,9 @@ class settingsscreen extends StatelessWidget
          listener: (context,state){
            if(state  is profilesucessstate)
              {
-               namecontroller.text=state.profilemodel.data!.name;
-               emailcontroller.text=state.profilemodel.data!.email;
-               phonecontroller.text=state.profilemodel.data!.phone;
+               namecontroller.text=state.profilemodel.data!.name!;
+               emailcontroller.text=state.profilemodel.data!.email!;
+               phonecontroller.text=state.profilemodel.data!.phone!;
              }
          },
          builder: (context,state) {

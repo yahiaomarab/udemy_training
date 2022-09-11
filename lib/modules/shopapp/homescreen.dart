@@ -7,12 +7,13 @@ import 'package:appoo/layout/shop_app/cubit/states.dart';
 import 'package:appoo/models/categoriesmodel.dart';
 import 'package:appoo/models/homemodel.dart';
 import 'package:appoo/shared/component/component.dart';
-import 'package:appoo/shared/styles/colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../shared/styles/colors.dart';
 
 class homescreen extends StatelessWidget
 {
@@ -45,7 +46,7 @@ Widget productsbuilder (homemodel model,context,categoriesmodel modil)
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CarouselSlider(
-            items:model.data.banners?.map((e) =>
+            items:model.data!.banners?.map((e) =>
                 Image(
               image:
             NetworkImage(
@@ -120,8 +121,8 @@ Widget productsbuilder (homemodel model,context,categoriesmodel modil)
             childAspectRatio: 1/1.43,
             children:
               List.generate(
-                  model.data.products!.length,
-                      (index) => buildgridproduct(model.data.products![index],context),
+                  model.data!.products!.length,
+                      (index) => buildgridproduct(model.data!.products![index],context),
               ),
 
           ),
@@ -207,7 +208,7 @@ Widget buildgridproduct (productsmodel model,context)
                             radius: 15,
                             child: Icon(Icons.favorite_border,size: 15,color: Colors.white,)),
                     onPressed: () {
-                         shopcubit.get(context).changefavorites(model.id);
+                         shopcubit.get(context).changefavorites(model.id!);
                           print(model.id);
                     },
                   ),

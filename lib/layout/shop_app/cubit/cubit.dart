@@ -1,6 +1,5 @@
 import 'package:appoo/layout/shop_app/cubit/states.dart';
 import 'package:appoo/models/homemodel.dart';
-import 'package:appoo/shared/network/remote/dio_helper.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +14,7 @@ import '../../../modules/shopapp/homescreen.dart';
 import '../../../modules/shopapp/settingsscreen.dart';
 import '../../../shared/constants/constants.dart';
 import '../../../shared/constants/endpoints.dart';
+import '../../../shared/network/remote/dio-helper.dart';
 
 class shopcubit extends Cubit<shopappstate>
 {
@@ -47,10 +47,10 @@ class shopcubit extends Cubit<shopappstate>
     //  print(value.data);
     //  print(token);
       homeee= homemodel.FromJson(value.data);
-     homeee!.data.products!.forEach((element)
+     homeee!.data!.products!.forEach((element)
       {
         favorites.addAll({
-       element.id:element.infavorites,
+       element.id!:element.infavorites!,
         });
       });
       print(favorites.toString());
@@ -123,7 +123,7 @@ class shopcubit extends Cubit<shopappstate>
     ).then((value)  {
       emit(profileloadingstate());
       profilemodel= Shoploginuser.FormJson(value.data);
-      print(profilemodel!.data?.name);
+      print(profilemodel!.data!.name);
       emit(profilesucessstate(profilemodel!));
     }).catchError((erorr){
       print(erorr.toString());

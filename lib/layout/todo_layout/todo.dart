@@ -80,7 +80,7 @@ class todo extends StatelessWidget
                                       type: TextInputType.text,
                                       text: "title",
                                       validate: (value) {
-                                        if (value.isEmpty) {
+                                        if (value!.isEmpty) {
                                           return 'title must not be empty';
                                         } else {
                                           return null;
@@ -105,7 +105,7 @@ class todo extends StatelessWidget
                                         });
                                       },
                                       validate: (value) {
-                                        if (value.isEmpty) {
+                                        if (value!.isEmpty) {
                                           return 'time must not be empty';
                                         } else {
                                           return null;
@@ -134,7 +134,7 @@ class todo extends StatelessWidget
                                       });
                                     },
                                     validate: (value) {
-                                      if (value.isEmpty) {
+                                      if (value!.isEmpty) {
                                         return 'date must not be empty';
                                       } else {
                                         return null;

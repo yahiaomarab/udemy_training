@@ -1,6 +1,6 @@
 class categoriesmodel
 {
-  bool?status;
+  bool? status;
   categoriesdatamodel? data;
    categoriesmodel.fromjson(Map<String,dynamic>json)
    {
@@ -24,9 +24,9 @@ categoriesdatamodel.fromjson(Map<String,dynamic>json)
 }
 class datamodel
 {
-  int?id;
-  String?name;
-  String?image;
+  int? id;
+  String? name;
+  String? image;
   datamodel.fromjson(Map<String,dynamic>json)
   {
     id=json['id'];

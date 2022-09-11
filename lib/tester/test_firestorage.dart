@@ -45,17 +45,17 @@ class firestorage extends StatelessWidget
       body: Center(
         child: Column(
           children: [
-             button(x: 40, text: 'press',
-                  OnPressed: ()
-                  {
-                    uploadcoverimage();
-                  },
-                  width: 100),
+            button(x: 40, text: 'press',
+                OnPressed: ()
+                {
+                  uploadcoverimage();
+                },
+                width: 100),
 
             button(x: 40, text: 'uploadphoto',
                 OnPressed: (){
-              getcoverimage();
-            },
+                  getcoverimage();
+                },
                 width: 100)
           ],
         ),

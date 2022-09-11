@@ -1,11 +1,13 @@
+import 'package:flutter/cupertino.dart';
+
 class socialaddpostmodel
 {
-   String? name;
-   String? dataTime;
-   String? uId;
-   String? postimage;
-   String? text;
-   String? image;
+  String?  name;
+  String?  dataTime;
+  String?  uId;
+  String?  postimage;
+  String?  text;
+  String?  image;
 
 
   socialaddpostmodel({
@@ -22,7 +24,7 @@ class socialaddpostmodel
     dataTime=json['dataTime'];
     image=json['image'];
     text=json['text'];
-    uId=json['Uid'];
+    uId=json['uId'];
     postimage=json['postimage'];
   }
   Map<String,dynamic>toMap()
