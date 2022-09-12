@@ -1,5 +1,6 @@
-import 'package:appoo/shared/network/local/cacah_helper.dart';
-import '../../modules/social_app/social_login_app/social_login_app.dart';
+import 'package:appoo/shared/network/local/cache-helper.dart';
+
+import '../../modules/social-app/social_login_app/social_login_app.dart';
 import '../component/component.dart';
 
 void signout(context)

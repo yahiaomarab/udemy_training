@@ -1,4 +1,4 @@
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
+import 'package:conditional_builder/conditional_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -78,9 +78,9 @@ class todo extends StatelessWidget
                                       controller: titlecontroller,
                                       prefix: Icons.title,
                                       type: TextInputType.text,
-                                      text: "title",
+                                      label: "title",
                                       validate: (value) {
-                                        if (value.isEmpty) {
+                                        if (value!.isEmpty) {
                                           return 'title must not be empty';
                                         } else {
                                           return null;
@@ -94,8 +94,8 @@ class todo extends StatelessWidget
                                       controller: timecontroller,
                                       prefix: Icons.access_time,
                                       type: TextInputType.datetime,
-                                      text: "time",
-                                      ontap: () {
+                                      label: "time",
+                                      onTap: () {
                                         showTimePicker(
                                           context: context,
                                           initialTime: TimeOfDay.now(),
@@ -105,7 +105,7 @@ class todo extends StatelessWidget
                                         });
                                       },
                                       validate: (value) {
-                                        if (value.isEmpty) {
+                                        if (value!.isEmpty) {
                                           return 'time must not be empty';
                                         } else {
                                           return null;
@@ -119,8 +119,8 @@ class todo extends StatelessWidget
                                     controller: datecontroller,
                                     prefix: Icons.calendar_today,
                                     type: TextInputType.datetime,
-                                    text: "date",
-                                    ontap: () {
+                                    label: "date",
+                                    onTap: () {
                                       showDatePicker(
                                         context: context,
                                         initialDate: DateTime.now(),
@@ -134,7 +134,7 @@ class todo extends StatelessWidget
                                       });
                                     },
                                     validate: (value) {
-                                      if (value.isEmpty) {
+                                      if (value!.isEmpty) {
                                         return 'date must not be empty';
                                       } else {
                                         return null;

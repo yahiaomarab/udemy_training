@@ -1,6 +1,6 @@
 import 'package:appoo/modules/register/cubit/cubit.dart';
-import 'package:appoo/shared/network/local/cacah_helper.dart';
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
+import 'package:appoo/shared/network/local/cache-helper.dart';
+import 'package:conditional_builder/conditional_builder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,7 +23,7 @@ class register extends StatelessWidget
        listener:(context,state){
          if( state is registersucessstate)
          {
-           if(state.modellogin.status!)
+           if(state.modellogin.status)
            {
              print(state.modellogin.data!.token);
              print(state.modellogin.message);
@@ -75,7 +75,7 @@ class register extends StatelessWidget
                          controller: usernamecontroller,
                          prefix: Icons.person,
                          type: TextInputType.text,
-                         text: 'User Name',
+                         label: 'User Name',
                          validate: (String? value){
                            if(value!.isEmpty)
                            {
@@ -94,7 +94,7 @@ class register extends StatelessWidget
                          controller: emailshopcontroller,
                          prefix: Icons.email_outlined,
                          type: TextInputType.emailAddress,
-                         text: 'Email',
+                         label: 'Email',
                          validate: (String? value){
                            if(value!.isEmpty)
                            {
@@ -113,8 +113,8 @@ class register extends StatelessWidget
                            controller: passshopcontroller,
                            prefix: Icons.password,
                            type: TextInputType.visiblePassword,
-                           text: 'Password',
-                           ispassword: registappcubit.get(context).bolyian,
+                           label: 'Password',
+                           isPassword: registappcubit.get(context).bolyian,
                            validate: (String? value){
                              if(value!.isEmpty)
                              {
@@ -125,8 +125,8 @@ class register extends StatelessWidget
                                return null;
                              }
                            },
-                           suefix:registappcubit.get(context).suffix,
-                           suffixpressed: ()
+                           suffix:registappcubit.get(context).suffix,
+                           onSuffixPressed: ()
                            {
                              registappcubit.get(context).changeiconpass();
                            }
@@ -139,7 +139,7 @@ class register extends StatelessWidget
                          controller: phonecontroller,
                          prefix: Icons.phone,
                          type: TextInputType.phone,
-                         text: 'Phone Number',
+                         label: 'Phone Number',
                          validate: (String? value){
                            if(value!.isEmpty)
                            {

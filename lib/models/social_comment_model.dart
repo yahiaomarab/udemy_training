@@ -1,37 +1,34 @@
-class socialaddpostmodel
+class socialaddcommentmodel
 {
-   dynamic name;
-   dynamic dataTime;
-   String? uId;
-   dynamic postimage;
-   dynamic text;
-   dynamic image;
+  dynamic name;
+  dynamic dataTime;
+  String? postId;
+  dynamic text;
+  dynamic image;
 
 
-  socialaddpostmodel({
+
+  socialaddcommentmodel({
     required this.name,
     required this.dataTime,
-    required this.uId,
-    required this.postimage,
+    required this.postId,
     required this.text,
     required this.image,
   });
-  socialaddpostmodel.fromjson(Map<String,dynamic>?json)
+  socialaddcommentmodel.fromjson(Map<String,dynamic>?json)
   {
     name=json!['name'];
     dataTime=json['dataTime'];
     image=json['image'];
     text=json['text'];
-    uId=json['Uid'];
-    postimage=json['postimage'];
+    postId=json['postId'];
   }
   Map<String,dynamic>toMap()
   {
     return  {
       'name':name,
       'image':image,
-      'postimage':postimage,
-      'uId':uId,
+      'postId':postId,
       'dataTime':dataTime,
       'text':text,
     };

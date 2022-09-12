@@ -26,8 +26,8 @@ class search extends StatelessWidget
                   controller: searchcontroller,
                   prefix: Icons.search,
                   type: TextInputType.text,
-                  text: 'search',
-                  onchange: (value)
+                  label: 'search',
+                  onChanged: (value)
                   {
                     newappcubit.get(context).getsearchsdata(value);
                   },

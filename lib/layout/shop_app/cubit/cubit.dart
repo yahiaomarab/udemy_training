@@ -1,6 +1,5 @@
 import 'package:appoo/layout/shop_app/cubit/states.dart';
 import 'package:appoo/models/homemodel.dart';
-import 'package:appoo/shared/network/remote/dio_helper.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +14,7 @@ import '../../../modules/shopapp/homescreen.dart';
 import '../../../modules/shopapp/settingsscreen.dart';
 import '../../../shared/constants/constants.dart';
 import '../../../shared/constants/endpoints.dart';
+import '../../../shared/network/remote/dio-helper.dart';
 
 class shopcubit extends Cubit<shopappstate>
 {

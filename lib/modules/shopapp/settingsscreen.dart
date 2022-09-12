@@ -1,5 +1,5 @@
 import 'package:appoo/layout/shop_app/cubit/cubit.dart';
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
+import 'package:conditional_builder/conditional_builder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,7 +47,7 @@ class settingsscreen extends StatelessWidget
                              controller: namecontroller,
                              prefix: Icons.person,
                              type: TextInputType.text,
-                             text: 'User Name',
+                             label: 'User Name',
                              validate: (String? value) {
                                if (value!.isEmpty) {
                                  return 'user name must not be written';
@@ -64,7 +64,7 @@ class settingsscreen extends StatelessWidget
                              controller: emailcontroller,
                              prefix: Icons.email_outlined,
                              type: TextInputType.emailAddress,
-                             text: 'Email',
+                             label: 'Email',
                              validate: (String? value) {
                                if (value!.isEmpty) {
                                  return 'email adress must not be written';
@@ -83,7 +83,7 @@ class settingsscreen extends StatelessWidget
                              controller: phonecontroller,
                              prefix: Icons.phone,
                              type: TextInputType.phone,
-                             text: 'Phone Number',
+                             label: 'Phone Number',
                              validate: (String? value) {
                                if (value!.isEmpty) {
                                  return 'phone number must not be written';

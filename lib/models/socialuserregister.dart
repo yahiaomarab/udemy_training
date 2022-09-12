@@ -1,13 +1,13 @@
 class socialUserRegister
 {
- String?  name;
- String?  phone;
- String?  uId;
+ dynamic  name;
+ dynamic  phone;
+String? uId;
  String?   email;
-   bool?  isemailverfied;
- String?   image;
- String?   cover;
- String?  bio;
+ bool?  isemailverfied;
+ dynamic   image;
+ dynamic   cover;
+ dynamic  bio;
   socialUserRegister({
     required this.name,
     required this.email,
@@ -18,9 +18,9 @@ class socialUserRegister
     required this.bio,
     required this.isemailverfied,
   });
-  socialUserRegister.fromjson(Map<String,dynamic>json)
+  socialUserRegister.fromjson(Map<String,dynamic>?json)
   {
-    name=json['name'];
+    name=json!['name'];
     bio=json['bio'];
     image=json['image'];
     phone=json['phone'];

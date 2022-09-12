@@ -1,7 +1,6 @@
 
-import 'package:appoo/modules/apiapp/web_view.dart';
 import 'package:appoo/shared/cubit/cubit.dart';
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
+import 'package:conditional_builder/conditional_builder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,66 +12,40 @@ import '../../layout/api_app/cubit/states.dart';
 
 Widget formfield (
     {
-  required TextEditingController controller,
-  required IconData prefix,
-  IconData ?suefix,
-  required TextInputType type,
-  Color color = Colors.blueGrey,
-  required String text,
-  required validate,
-  Function? ontap,
-      Function? suffixpressed,
-  bool isclicable = true,
-  Function?onchange,
-  bool ispassword = false,
+      required TextEditingController controller ,
+      required TextInputType type ,
+      Function(String)? onSubmit ,
+      VoidCallback? onTap ,
+      Function(String)? onChanged ,
+      required String? Function(String?)? validate ,
+      required String label ,
+      IconData? prefix ,
+      IconData? suffix = null ,
+      bool isPassword = false,
+      bool isClickable = true ,
+      VoidCallback? onSuffixPressed ,
 
-}
-    )
-=> TextFormField(
-  onTap:(){
-    ontap!();
-  },
-obscureText: ispassword,
-
-  enabled: isclicable,
-  validator:validate,
-  keyboardType: type,
-  controller:controller ,
-  onChanged: (s)
-  {
-    onchange!(s);
-  },
-  onFieldSubmitted: (value)
-  {
-    print(value);
-  },
-
+    }) => TextFormField(
+  validator: validate,
+  obscureText: isPassword,
+  controller: controller,
   decoration: InputDecoration(
-    prefixIcon: Icon(
-      prefix,
-      color: color,
-    ),
-    suffixIcon: suefix!=null?IconButton
-      (
-      onPressed:()
-      {
-        suffixpressed!();
-      },
-      icon: Icon(suefix,color: color,),
-    ):null,
-    labelText: text,
-
-    border:OutlineInputBorder(
-      borderRadius: BorderRadius.only(
-        topRight: Radius.circular(20),
-        bottomLeft: Radius.circular(20),
-
+      labelText: label,
+      prefixIcon: Icon(prefix ,),
+      suffixIcon: GestureDetector(
+        child: Icon(suffix),
+        onTap: onSuffixPressed,
       ),
-    ),
-
+      border: OutlineInputBorder()
   ),
+  keyboardType: type,
+  enabled: isClickable,
+  onFieldSubmitted: onSubmit,
+  onChanged: onChanged,
+  onTap: onTap,
 
-);
+) ;
+
 Widget button(
     {
       required double x,
